@@ -32,6 +32,9 @@ dependencies:
   simple-json-db:
     specifier: ^2.0.0
     version: 2.0.0
+  svelte-date-range-select:
+    specifier: ^1.0.4
+    version: 1.0.4
   svelte-french-toast:
     specifier: ^1.2.0
     version: 1.2.0(svelte@4.1.2)
@@ -2307,6 +2310,10 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /svelte-date-range-select@1.0.4:
+    resolution: {integrity: sha512-WhU5sAlIFZmAOEJeodeP/IGO5ptehNjzOeFLP79GRIbdyk8ug6pCh7o/TaI8m5BEG/HtQ4lHjd2Z3oBGX/UqZQ==}
+    dev: false
 
   /svelte-eslint-parser@0.32.2(svelte@4.1.2):
     resolution: {integrity: sha512-Ok9D3A4b23iLQsONrjqtXtYDu5ZZ/826Blaw2LeFZVTg1pwofKDG4mz3/GYTax8fQ0plRGHI6j+d9VQYy5Lo/A==}

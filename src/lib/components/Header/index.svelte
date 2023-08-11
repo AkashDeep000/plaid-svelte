@@ -23,7 +23,7 @@
 	};
 </script>
 
-<Navbar>
+<Navbar class="dark:bg-gray-800 border-b">
 	<NavBrand class="text-2xl font-bold" href="/">Plaid</NavBrand>
 	<div class="flex items-center md:order-2 gap-2">
 		<DarkMode />

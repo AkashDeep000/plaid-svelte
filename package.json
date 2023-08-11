@@ -38,6 +38,7 @@
 		"md5": "^2.3.0",
 		"plaid": "^15.2.0",
 		"simple-json-db": "^2.0.0",
+		"svelte-date-range-select": "^1.0.4",
 		"svelte-french-toast": "^1.2.0",
 		"tailwind-merge": "^1.14.0"
 	}
