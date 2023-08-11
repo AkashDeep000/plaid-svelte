@@ -4,8 +4,9 @@ import plaidClient from "$lib/server/plaidClient.js";
 export async function load({ parent }) {
   const data = await parent();
   const banks = await db.get(data?.session?.user?.email);
-  /*
+
   if (banks && banks.length > 0) {
+    /*
     const fetchBanksPromises = banks.map((bank) => {
       const getBankDetails = async () => {
         const response = await plaidClient.accountsGet({
@@ -52,9 +53,9 @@ export async function load({ parent }) {
     }
     //console.log(banksDetails);
     return { data: data };
-  }
   */
-  banks.forEach(function(tmp){ delete tmp.accessToken });
+    banks.forEach(function(tmp) { delete tmp.accessToken });
 
-  return { data: banks };
+    return { data: banks };
+  }
 }

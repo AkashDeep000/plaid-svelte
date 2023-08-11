@@ -4,7 +4,7 @@
   import { Button } from 'flowbite-svelte';
   import { Icon } from 'flowbite-svelte-icons';
   export let data
-  console.log(data)
+  //console.log(data)
 </script>
 
 <div>
