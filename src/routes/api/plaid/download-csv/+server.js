@@ -1,7 +1,7 @@
 import plaidClient from '$lib/server/plaidClient.js';
 import db from '$lib/server/dbClient.js';
-import { Parser } from '@json2csv/plainjs';
 import { json } from '@sveltejs/kit';
+import { AsyncParser } from '@json2csv/node';
 
 export const GET = async ({ url, locals }) => {
 	const startDate = url.searchParams.get('startDate');
@@ -153,8 +153,8 @@ export const GET = async ({ url, locals }) => {
 		]
 	};
 
-	const parser = new Parser(opts);
-	const csv = parser.parse(allTransactions);
+	const parser = new AsyncParser(opts);
+	const csv = await parser.parse(allTransactions).promise();
 	//console.log(allTransactions);
 	return json({ data: csv });
 	/*
