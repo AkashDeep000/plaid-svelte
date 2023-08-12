@@ -10,6 +10,8 @@
 
 <div>
 	<AddAccounts />
-	<BankAccountList data={data.data} />
-	<DownloadCSV data={data.data} />
+	{#if data?.data?.length > 0}
+		<BankAccountList data={data.data} />
+		<DownloadCSV data={data.data} />
+	{/if}
 </div>

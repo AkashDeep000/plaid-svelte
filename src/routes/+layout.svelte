@@ -24,6 +24,6 @@
 </script>
 
 <Header />
-<div class="p-2 md:px-[11%]">
+<div class="p-2 md:px-[10%]">
 	<slot />
 </div>

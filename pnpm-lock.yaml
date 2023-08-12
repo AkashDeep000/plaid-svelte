@@ -14,6 +14,9 @@ dependencies:
   '@floating-ui/dom':
     specifier: ^1.5.1
     version: 1.5.1
+  '@json2csv/plainjs':
+    specifier: ^7.0.1
+    version: 7.0.1
   '@replit/database':
     specifier: ^2.0.5
     version: 2.0.5
@@ -23,6 +26,9 @@ dependencies:
   flowbite-svelte:
     specifier: ^0.43.1
     version: 0.43.1(svelte@4.1.2)
+  in-browser-download:
+    specifier: ^2.0.0
+    version: 2.0.0
   md5:
     specifier: ^2.3.0
     version: 2.3.0
@@ -647,6 +653,18 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  /@json2csv/formatters@7.0.1:
+    resolution: {integrity: sha512-eCmYKIIoFDXUB0Fotet2RmcoFTtNLXLmSV7j6aEQH/D2GiO749Uan3ts03PtAhXpE11QghxBjS0toXom8VQNBw==}
+    dev: false
+
+  /@json2csv/plainjs@7.0.1:
+    resolution: {integrity: sha512-UAdaZwahrUeYhMYYilJwDsRfE7wDRsmGMsszYH67j8FLD5gZitqG38RXpUgHEH0s6YjsY8iKYWeEQ19WILncFA==}
+    dependencies:
+      '@json2csv/formatters': 7.0.1
+      '@streamparser/json': 0.0.15
+      lodash.get: 4.4.2
+    dev: false
+
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -685,6 +703,10 @@ packages:
       node-fetch: 2.6.12
     transitivePeerDependencies:
       - encoding
+    dev: false
+
+  /@streamparser/json@0.0.15:
+    resolution: {integrity: sha512-6oikjkMTYAHGqKmcC9leE4+kY4Ch4eiTImXUN/N4d2bNGBYs0LJ/tfxmpvF5eExSU7iiPlV9jYlADqvj3NWA3Q==}
     dev: false
 
   /@sveltejs/adapter-auto@2.1.0(@sveltejs/kit@1.22.4):
@@ -1607,6 +1629,10 @@ packages:
     engines: {node: '>=0.8.19'}
     dev: true
 
+  /in-browser-download@2.0.0:
+    resolution: {integrity: sha512-rK0WW0XopcigX66O7IfGdTPbCMfFKYAkJ37qP+OyTA2fh5fxb1ub1+q6fux9+29rzI4Z0i0tax7dE5Om3JxPZw==}
+    dev: false
+
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
     dependencies:
@@ -1737,6 +1763,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash.get@4.4.2:
+    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    dev: false
 
   /lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}

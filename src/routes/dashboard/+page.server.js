@@ -54,10 +54,15 @@ export async function load({ parent }) {
     //console.log(banksDetails);
     return { data: data };
   */
-		banks.forEach(function (tmp) {
-			delete tmp.accessToken;
+		const banksArray = [];
+		banks.forEach(function (bank) {
+			const bankDetails = {};
+			bankDetails.institutionId = bank.institutionId;
+			bankDetails.name = bank.name;
+			bankDetails.logo = bank.logo;
+			banksArray.push(bankDetails);
 		});
 
-		return { data: banks };
+		return { data: banksArray };
 	}
 }

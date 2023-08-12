@@ -1,6 +1,9 @@
 <script>
-	import { Card, Dropdown, DropdownItem, Checkbox, Button, Search, Avatar } from 'flowbite-svelte';
+	import { Card, Dropdown, DropdownItem, Checkbox, Button, Avatar, Spinner } from 'flowbite-svelte';
 	import { Icon } from 'flowbite-svelte-icons';
+	import download from 'in-browser-download';
+	import toast, { Toaster } from 'svelte-french-toast';
+
 	export let data;
 	const maxTime = new Date();
 	const maxDate = maxTime.toISOString().split('T')[0];
@@ -18,6 +21,26 @@
 	$: {
 		selectAllBanks(data);
 	}
+	let isFetching = false;
+
+	const downloadCsv = async () => {
+		try {
+			isFetching = true;
+			const response = await fetch(
+				`/api/plaid/download-csv?startDate=${startDate}&endDate=${endDate}&banksId=${banksIdArray.join(
+					','
+				)}`
+			);
+			const data = await response.json();
+			console.log(data);
+			download(data.data, `transactions-${startDate}-to-${endDate}.csv`);
+			isFetching = false;
+			if (!response.ok) throw new Error(response.statusText);
+		} catch (e) {
+			isFetching = false;
+			console.log(e);
+		}
+	};
 </script>
 
 <Card class="" size="full">
@@ -74,7 +97,7 @@
 		</div>
 	</div>
 
-	<p class="mt-2 py-2 text-lg text-gray-800 dark:text-gray-200">Select a accounts :</p>
+	<p class="mt-2 py-2 text-lg text-gray-800 dark:text-gray-200">Select accounts :</p>
 	<div class="grid grid-cols-2 gap-2 w-full md:grid-cols-3">
 		{#each data as item}
 			<Checkbox custom bind:group={banksIdArray} value={item.institutionId}>
@@ -102,5 +125,21 @@
 			</Checkbox>
 		{/each}
 	</div>
-	<Button class="mt-4">Download CSV (WIP)</Button>
+	<Button
+		on:click={() =>
+			toast.promise(downloadCsv(), {
+				loading: 'Fetching transactions...',
+				success: 'Successfully fetched transactions',
+				error: 'Failed when proccesing'
+			})}
+		class="mt-4"
+	>
+		{#if !isFetching}
+			<Icon name="download-outline" class="mx-2 mb-2 dark:text-white" />
+		{:else}
+			<Spinner class="mx-2 my-1" size="5" />
+		{/if}
+		Download CSV
+	</Button>
+	<Toaster />
 </Card>
