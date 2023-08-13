@@ -3,7 +3,7 @@ import db from '$lib/server/dbClient.js';
 import { json } from '@sveltejs/kit';
 import { AsyncParser } from '@json2csv/node';
 
-export const GET = async ({ url, locals }) => {
+export const GET = async ({ url, locals }) => { 
 	const startDate = url.searchParams.get('startDate');
 	const endDate = url.searchParams.get('endDate');
 	const banksId = url.searchParams.get('banksId');
@@ -53,6 +53,7 @@ export const GET = async ({ url, locals }) => {
 				return transactions;
 			} catch (err) {
 				console.log(err);
+				return new Response('Error when fetching transactions', { status: 400 });
 			}
 		};
 		return getTansactios(bank);
