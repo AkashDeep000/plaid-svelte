@@ -30,8 +30,8 @@
   `/api/plaid/download-csv?startDate=${startDate}&endDate=${endDate}&banksId=${banksIdArray.join(
   ','
   )}`
-if (!response.ok) throw new Error(response.statusText);
   );
+  if (!response.ok) throw new Error(response.statusText);
   const data = await response.json();
   console.log(data);
   download(data.data, `transactions-${startDate}-to-${endDate}.csv`);
