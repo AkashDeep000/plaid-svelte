@@ -38,9 +38,9 @@ export async function GET({ url, locals }) {
 			const linkToken = response.data.link_token;
 			console.log({ linkToken });
 			return json({ linkToken });
-		} catch (error) {
+		} catch (err) {
 			// Handle error
-			console.log(error);
+			console.log(err);
 			throw error(404, 'Not found');
 		}
 	}

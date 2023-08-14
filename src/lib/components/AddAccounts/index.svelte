@@ -40,7 +40,7 @@
 			},
 			onEvent: (eventName, metadata) => {
 				console.log('Event:', eventName);
-				//  console.log("Metadata:", metadata);
+				console.log('Metadata:', metadata);
 			},
 			onExit: (error, metadata) => {
 				console.log(error, metadata);
