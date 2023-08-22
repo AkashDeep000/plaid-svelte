@@ -134,7 +134,7 @@
 			toast.promise(downloadCsv(), {
 				loading: 'Fetching transactions...',
 				success: 'Successfully fetched transactions',
-				error: 'Failed when proccesing'
+				error: 'Failed when proccesing, Some accounts authorisation may expired, try to remove those accounts and reconnect then.'
 			})}
 		class="mt-4"
 	>
