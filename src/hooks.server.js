@@ -1,6 +1,8 @@
 import { SvelteKitAuth } from '@auth/sveltekit';
 import GitHub from '@auth/core/providers/github';
-import { GITHUB_ID, GITHUB_SECRET, AUTH_SECRET } from '$env/static/private';
+import { env } from '$env/dynamic/private';
+
+const { GITHUB_ID, GITHUB_SECRET, AUTH_SECRET } = env;
 import { sequence } from '@sveltejs/kit/hooks';
 import { redirect } from '@sveltejs/kit';
 
