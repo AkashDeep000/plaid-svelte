@@ -7,7 +7,7 @@ import db from '$lib/server/dbClient.js';
 export async function POST({ url, request, locals }) {
 	const { publicToken } = await request.json();
 	const session = await locals.getSession();
-	const email = session?.user?.email;
+	const email = session.user.email;
 	try {
 		const response = await plaidClient.itemPublicTokenExchange({
 			public_token: publicToken

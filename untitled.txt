@@ -1,0 +1,9 @@
+{
+  "AUTH_SECRET": "super-secret",
+  "PLAID_CLIENT_ID": "64de589e35b633001a6b2dbe",
+  "AUTH_TRUST_HOST": "true",
+  "GITHUB_ID": "Iv1.63427c11a97b5fac",
+  "GITHUB_SECRET": "9f3fa99ed68ce621c54c6afdcf6a84fb1d5f9d5e",
+  "PLAID_SECRET": "59bfd9a4788fb142ac2c4348132077",
+  "PLAID_ENV": "development"
+}
