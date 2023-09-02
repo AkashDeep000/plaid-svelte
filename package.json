@@ -34,6 +34,7 @@
 		"@floating-ui/dom": "^1.5.1",
 		"@json2csv/node": "^7.0.1",
 		"@replit/database": "^2.0.5",
+		"@vercel/kv": "^0.2.2",
 		"flowbite": "^1.8.1",
 		"flowbite-svelte": "^0.43.1",
 		"in-browser-download": "^2.0.0",
