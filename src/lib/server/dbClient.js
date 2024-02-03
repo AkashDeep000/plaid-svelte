@@ -1,6 +1,6 @@
 import ReplitDB from "@replit/database";
 import JSONdb from "simple-json-db";
-import kv from "@vercel/kv";
+import { kv } from "@vercel/kv";
 import { env } from "$env/dynamic/private";
 
 let db;
